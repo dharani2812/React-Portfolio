@@ -83,16 +83,18 @@ body, html {
   }
 
   .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.7); // Dark overlay effect
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    border-radius: 10px;
-    // padding: 20px;
+    opacity: 0; // Initially hidden
+    transition: opacity 0.5s ease-in-out; // Smooth fade-in effect
   }
 
   &:hover .overlay {
@@ -117,8 +119,13 @@ body, html {
 
 @media screen and (max-width: 768px) {
   .tool-card {
-    min-width: auto;
-    max-width: 100%;
-    width: 100%;
+    width: auto; /* Allow card to resize within the available width */
+    max-width: 100%; /* Ensure card is full-width within available space */
+    .overlay{
+      opacity: 1;
+    }
+    .tool-title{
+      opacity: 1;
+    }
   }
 }

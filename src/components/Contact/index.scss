@@ -6,7 +6,6 @@
   gap: 40px;
   padding: 20px;
   margin-top: 20px;
- 
 
   .left-content {
     flex: 1 1 45%;
@@ -19,11 +18,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
     .lottie {
+      width: 100%;
       max-width: 100%;
       height: auto;
+      aspect-ratio: 1 / 1; // Ensures consistent shape
+      min-height: 250px;   // Guarantees visibility on first load
     }
   }
 }
@@ -38,9 +39,8 @@
 
     li {
       padding: 0;
-      margin: 0;
+      margin: 0 0 10px 0;
       list-style: none;
-      margin-bottom: 10px;
       opacity: 0;
       overflow: hidden;
       display: block;
@@ -102,6 +102,7 @@
   }
 }
 
+// 📱 Responsive layout
 @media (max-width: 768px) {
   .contact-page {
     flex-direction: column;
@@ -113,6 +114,12 @@
 
     .right-content {
       margin-top: 30px;
+
+      .lottie {
+        aspect-ratio: auto;
+        width: 100%;
+        min-height: 200px;
+      }
     }
   }
 }

@@ -1,17 +1,27 @@
-html, body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: 'Coolvetica', sans-serif;
   background-color: #0d0d0d;
-  max-width: 100%;
+  width: 100%;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .home-page {
   display: flex;
-  width: 100%; // changed from 100vw to prevent horizontal scroll
+  flex-direction: row;
+  width: 100%;
   height: 100vh;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   .text-zone {
     width: 50%;
@@ -141,6 +151,7 @@ html, body {
       width: 100%;
       max-width: 480px;
       height: auto;
+      overflow: hidden;
     }
 
     .tech-icons {

@@ -93,16 +93,21 @@
         content: 'TOOLS';
       }
     }
-
     a.projects-link {
       &:after {
-        content: 'PROJECT';
+        content: 'PROJECTS';
       }
     }
 
     a.contact-link {
       &:after {
         content: 'CONTACT';
+      }
+    }
+
+    a.portfolio-link {
+      &:after {
+        content: 'PORTFOLIO';
       }
     }
 
@@ -191,15 +196,10 @@
 
      .hamburger-icon,
      .close-icon {
-       position: absolute;
-       top: 15px;
-       right: 50px; // default for below 1200px
-       display: block;
-     
-       @media screen and (max-width: 500px) {
-         right: 20px;
-       }
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: block;
      }
   }
 }
-

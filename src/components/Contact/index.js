@@ -20,6 +20,10 @@ const Contact = () => {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault()
 

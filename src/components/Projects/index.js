@@ -87,6 +87,7 @@ const Projects = () => {
       </h1>
 
       {isDesktop ? (
+        
         <Slider {...settings} className="Project-carousel">
           {projectsData.map((project, index) => (
             <div
