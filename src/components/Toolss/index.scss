@@ -1,0 +1,124 @@
+/* SCSS: index.scss */
+
+@mixin bg-image($image) {
+  background-image: url($image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tool-card-0 {@include bg-image("../../assets/images/Tools-Section/vscode-img.png");}
+.tool-card-1 {@include bg-image("../../assets/images/Tools-Section/github-img.png");}
+.tool-card-2 {@include bg-image("../../assets/images/Tools-Section/netlify-img.jpg");}
+.tool-card-3 {@include bg-image("../../assets/images/Tools-Section/eclipse-img.jpg");}
+.tool-card-4 {@include bg-image("../../assets/images/Tools-Section/photoshop-img.jpg");}
+
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.main-heading {
+  margin-bottom: 30px;
+}
+
+.tools-carousel {
+  margin-left: 50px;
+  .slick-list {
+    overflow: hidden; // helps with hover effect visibility
+   
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+
+    // Prevent Slick from setting min-width too small
+    > div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .slick-dots li button:before {
+    color: rgb(10, 72, 112);
+    font-size: 12px;
+  }
+
+  .slick-prev, .slick-next {
+    color: #0a4870;
+    z-index: 1;
+  }
+}
+
+
+.tool-card {
+  width: 100%;
+  max-width: 500px!important;
+  height: 350px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  border: 3px solid rgba(255, 215, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+  flex: none;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+    // padding: 20px;
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+
+  .tool-title {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    color: white;
+    margin-bottom: 10px;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  &:hover .tool-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tool-card {
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
