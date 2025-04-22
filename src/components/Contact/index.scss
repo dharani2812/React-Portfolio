@@ -116,9 +116,9 @@
       margin-top: 30px;
 
       .lottie {
-        aspect-ratio: auto;
+        aspect-ratio: 1 / 1; // 🔄 Keep it consistent
         width: 100%;
-        min-height: 200px;
+        min-height: 250px;    // 🔄 Increased to ensure full render
       }
     }
   }
