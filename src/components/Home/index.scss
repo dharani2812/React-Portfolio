@@ -1,14 +1,15 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Coolvetica', sans-serif;
   background-color: #0d0d0d;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
 .home-page {
   display: flex;
-  width: 100vw;
+  width: 100%; // changed from 100vw to prevent horizontal scroll
   height: 100vh;
   box-sizing: border-box;
 
@@ -25,31 +26,26 @@ body {
       font-size: 48px;
       line-height: 56px;
       margin: 0;
-      letter-spacing: 2px; // reduced from 4px to avoid overflow
+      letter-spacing: 2px;
       white-space: normal;
       overflow-wrap: break-word;
-      word-break: break-word; // helps avoid overflow on long words
-    
+      word-break: break-word;
+
       @media (max-width: 1024px) {
         font-size: 40px;
       }
       @media (max-width: 869px) {
         font-size: 32px;
       }
-    
       @media (max-width: 768px) {
         font-size: 32px;
         text-align: center;
       }
-    
       @media (max-width: 480px) {
         font-size: 26px;
         line-height: 38px;
       }
     }
-    
-    
-    
 
     h2.job-title {
       color: #aaa;
@@ -62,7 +58,6 @@ body {
         font-size: 16px;
         text-align: center;
       }
-
       @media (max-width: 480px) {
         font-size: 14px;
         text-align: center;
@@ -94,14 +89,15 @@ body {
         padding: 8px 16px;
       }
     }
+
     ul {
       display: flex;
-      justify-content: flex-start; // or center, depending on your alignment preference
-      gap: 20px; // add spacing between items
-      margin-top: 20px; // space from .flat-button
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 20px;
       padding: 0;
       list-style: none;
-    
+
       li {
         a {
           padding-top: 20px;
@@ -109,29 +105,28 @@ body {
           font-size: 30px;
           line-height: 16px;
           color: #4d4d4e;
+
           @media (max-width: 768px) {
             font-size: 25px;
             color: #ffd700;
           }
           @media (max-width: 480px) {
-            font-size: 20px; 
+            font-size: 20px;
             color: #ffd700;
-
           }
         }
-    
+
         &:hover {
           .anchor-icon {
             color: #ffd700;
           }
         }
       }
-    
+
       @media (max-width: 768px) {
-        justify-content: center; // better for smaller screens
+        justify-content: center;
       }
     }
-    
   }
 
   .visual-zone {
@@ -178,6 +173,3 @@ body {
     }
   }
 }
-
-
-
