@@ -21,10 +21,10 @@
 
     .lottie {
       width: 100%;
-      max-width: 100%;
+      max-width: 500px;
       height: auto;
-      aspect-ratio: 1 / 1; // Ensures consistent shape
-      min-height: 250px;   // Guarantees visibility on first load
+      aspect-ratio: 1 / 1;
+      min-height: 250px;
     }
   }
 }
@@ -116,9 +116,9 @@
       margin-top: 30px;
 
       .lottie {
-        aspect-ratio: 1 / 1; // 🔄 Keep it consistent
+        aspect-ratio: 1 / 1;
         width: 100%;
-        min-height: 250px;    // 🔄 Increased to ensure full render
+        min-height: 250px;
       }
     }
   }

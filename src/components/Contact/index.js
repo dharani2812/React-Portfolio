@@ -1,13 +1,11 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Loader from 'react-loaders'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import BGParticle from '../BG-Particles'
-
-// Lottie import
 import { Player } from '@lottiefiles/react-lottie-player'
-import contactAnimation from '../../assets/images/contact-section/contact-animation1.json' // ✅ Replace with your actual path
+import contactAnimation from '../../assets/images/contact-section/contact-animation1.json'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -20,9 +18,13 @@ const Contact = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  useEffect(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, []);
+  // Fix: Dispatch resize event *after* layout settles
+  useLayoutEffect(() => {
+    const timeout = setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 100)
+    return () => clearTimeout(timeout)
+  }, [])
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -89,10 +91,12 @@ const Contact = () => {
 
         <div className="right-content">
           <Player
+            key={letterClass} // Triggers rerender on letter animation change
             autoplay
             loop
             src={contactAnimation}
             className="lottie"
+            style={{ width: '100%', maxWidth: '500px', height: 'auto' }}
           />
         </div>
       </div>
