@@ -11,7 +11,11 @@ import css from '../../assets/images/home-section/css.svg'
 import ps from '../../assets/images/home-section/ps.svg'
 
 import BGParticle from '../BG-Particles'
-import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Home = () => {
@@ -88,6 +92,14 @@ const Home = () => {
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
+          <a
+            href="/Dharani Dharan ATS Resume.pdf"
+            className="flat-button"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
+
           <ul>
             <li>
               <a
