@@ -1,0 +1,213 @@
+@mixin bg-image($image) {
+  background-image: url($image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.skill-card-0 {
+  @include bg-image("../../assets/images/Skill-Section/html-img.jpg");
+}
+.skill-card-1 {
+  @include bg-image("../../assets/images/Skill-Section/css-img.jpg");
+}
+.skill-card-2 {
+  @include bg-image("../../assets/images/Skill-Section/js-img.jpg");
+}
+.skill-card-3 {
+  @include bg-image("../../assets/images/Skill-Section/react-img.jpg");
+}
+.skill-card-4 {
+  @include bg-image("../../assets/images/Skill-Section/tailwindcss-img.jpg");
+}
+.skill-card-5 {
+  @include bg-image("../../assets/images/Skill-Section/bootstrap-img.png");
+}
+.skill-card-6 {
+  @include bg-image("../../assets/images/Skill-Section/java-img.jpg");
+}
+.skill-card-7 {
+  @include bg-image("../../assets/images/Skill-Section/nodejs.jpg");
+}
+.skill-card-8 {
+  @include bg-image("../../assets/images/Skill-Section/expressjs.jpg");
+}
+.skill-card-9 {
+  @include bg-image("../../assets/images/Skill-Section/mongodb.png");
+}
+.skill-card-10 {
+  @include bg-image("../../assets/images/Skill-Section/photoshop-img.jpg");
+}
+.skill-card-11 {
+  @include bg-image("../../assets/images/Skill-Section/wp-img.jpg");
+}
+.skill-card-12 {
+  @include bg-image("../../assets/images/Skill-Section/uiux-img.jpg");
+}
+
+
+/* Prevent horizontal scrolling */
+body, html {
+  overflow-x: hidden; /* Disable horizontal scroll */
+  margin: 0; /* Ensure no default margin */
+  padding: 0; 
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  left: 100px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.main-heading {
+  margin-bottom: 30px;
+}
+
+/* Slick Carousel Styling */
+.skills-carousel {
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    height: auto; /* Set a height for the slide to accommodate background images */
+  }
+  .slick-dots li button:before {
+    color: rgb(10, 72, 112);
+    font-size: 12px;
+  }
+
+  .slick-prev, .slick-next {
+    color: #0a4870;
+    z-index: 1;
+  }
+}
+
+/* Skill Card */
+.skill-card {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  border: 3px solid rgb(255, 215, 0, 0.5);
+
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 44, 67, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+    // padding: 20px;
+  }
+}
+
+
+.skill-title {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: auto;
+  letter-spacing: 5px;
+}
+// .skill-card .overlay .skill-description {
+//   font-size: 2rem;
+//   color: rgb(255, 255, 255, 0.8) !important; // Force the color change
+// }
+
+/* Responsive Design */
+// @media screen and (max-width: 1024px) {
+//   .container {
+//     padding: 20px; /* Keep padding for top and bottom */
+//     margin-left: 50px; /* 50px margin for left side on tablet */
+//     margin-right: 100px; /* 50px margin for right side on tablet */
+//     box-sizing: border-box; /* Ensure no overflow */
+//   }
+
+//   .skill-card {
+//     width: auto; /* Allow card to resize within the available width */
+//     max-width: 80%; /* Ensures the card doesn't overflow */
+//   }
+// }
+
+@media screen and (max-width: 568px) {
+  .container {
+    padding: 20px; /* Keep padding for top and bottom */
+    // margin-left: 50px; /* 50px margin for left side on mobile */
+    margin-right: 100px; /* 50px margin for right side on mobile */
+    box-sizing: border-box; /* Ensure no overflow */
+  }
+
+  .skill-card {
+    width: auto; /* Allow card to resize within the available width */
+    max-width: 100%; /* Ensure card is full-width within available space */
+  }
+}
+
+
+// BAR
+.circular-skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+
+  .circle {
+    --percentage: 75;
+    --color: #00f;
+    --duration: 2s;
+  
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    overflow: hidden;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(var(--color) 0%, #222 0%);
+      animation: fillCircle var(--duration) ease-out forwards;
+    }
+  
+    .progress-text {
+      position: absolute;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+  }
+  
+  @keyframes fillCircle {
+    from {
+      background: conic-gradient(var(--color) 0%, #222 0%);
+    }
+    to {
+      background: conic-gradient(var(--color) calc(var(--percentage) * 1%), #222 0%);
+    }
+  }
+}
