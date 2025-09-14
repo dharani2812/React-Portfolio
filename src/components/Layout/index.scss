@@ -1,0 +1,319 @@
+/* ----------------- Global Page Setup ----------------- */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+  will-change: contents;
+  height: 90%;
+  min-height: 566px;
+  position: absolute;
+  opacity: 0;
+  top: 5%;
+  margin: 0 auto;
+  z-index: 1;
+  transform-style: preserve-3d;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+}
+
+.container.contact-page,
+.container.skills-page,
+.container.tools-page,
+.container.projects-page,
+.container.HtmlProjects-page,
+.container.ReactProjects-page,
+.container.WordPressProjects-page,
+.container.Projects-page,
+.container.JSProject-page,
+.container.about-page {
+  h1 {
+    font-size: 53px;
+    font-family: 'Coolvetica';
+    color: #ffd700;
+    font-weight: 400;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px;
+    left: -10px;
+    letter-spacing: 10px;
+  }
+
+  p {
+    font-size: 13px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 300;
+    max-width: fit-content;
+    animation: pulse 1s;
+    &:nth-of-type(1) {
+      animation-delay: 1.1s;
+    }
+    &:nth-of-type(2) {
+      animation-delay: 1.2s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 1.3s;
+    }
+  }
+
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    vertical-align: middle;
+    display: table-cell;
+    max-height: 90%;
+  }
+
+  .text-animate-hover {
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/* ----------------- Media Queries ----------------- */
+@media screen and (max-width: 1200px) {
+  .container {
+    position: initial;
+    height: auto;
+    min-height: auto;
+
+    &.contact-page,
+    &.projects-page,
+    &.HtmlProjects-page,
+    &.JSProject-page,
+    &.ReactProjects-page,
+    &.WordPressProjects-page,
+    &.PhotoshopProjects-page,
+    &.tools-page,
+    &.about-page,
+    &.portfolio-page {
+      .text-zone {
+        position: initial;
+        transform: none;
+        width: 100%;
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    }
+
+    &.portfolio-page {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      h1.page-title {
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+      .image-box {
+        height: 200px;
+        max-width: calc(50% - 10px);
+      }
+    }
+  }
+
+  .stage-cube-cont {
+    position: initial;
+    width: 100%;
+    height: 0%;
+    overflow: visible;
+  }
+}
+
+/* ----------------- Home Page Center ----------------- */
+.container.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: left;
+  }
+  .job-title {
+    text-align: left;
+  }
+
+  @media screen and (max-width: 786px) { 
+    display: block;
+  }
+ 
+}
+
+/* ----------------- About Page Center ----------------- */
+.container.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+    padding-left: 120px;  /* ✅ added gap for desktop navbar */
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+/* Responsive fix - remove extra gap on smaller screens */
+@media screen and (max-width: 1200px) {
+  .container.about-page {
+    .text-zone {
+      padding-left: 20px;  /* ✅ smaller gap for tablets/mobiles */
+    }
+  }
+}
+
+/* ----------------- Skills Page Center ----------------- */
+.container.skills-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* ----------------- Projects Page Center ----------------- */
+.container.projects-page {
+  min-height: 100vh;
+
+  @media screen and (min-width: 1201px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .projects-container {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* ----------------- Tools Page Center ----------------- */
+.container.tools-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* ----------------- About Page Center ----------------- */
+
+
+/* ----------------- Universal Centering ----------------- */
+.container.contact-page,
+.container.about-page,
+.container.portfolio-page,
+.container.HtmlProjects-page,
+.container.ReactProjects-page,
+.container.WordPressProjects-page,
+.container.JSProject-page,
+.container.Projects-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-zone {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+}
+
+/* ----------------- Hamburger Fix ----------------- */
+.hamburger {
+  position: fixed; /* always on top */
+  top: 20px;
+  right: 20px;
+  z-index: 9999; /* above all containers */
+}
+
+/* Optional: mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998; /* below hamburger */
+}

@@ -1,0 +1,247 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Coolvetica', sans-serif;
+  background-color: #0d0d0d;
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  .text-zone {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+     @media (min-width: 1024px) {
+        margin-left: 50px;
+      }
+
+    // Ensure order stays consistent everywhere
+    h1 {
+      order: 1;
+      color: #fff;
+      font-size: 48px;
+      line-height: 56px;
+      margin: 0;
+      letter-spacing: 2px;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+
+      @media (max-width: 1024px) {
+        font-size: 40px;
+      }
+      @media (max-width: 869px) {
+        font-size: 32px;
+      }
+
+      // tablet fix
+      @media (min-width: 768px) and (max-width: 1023px) {
+        margin-left: 50px;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+        text-align: center;
+      }
+      @media (max-width: 480px) {
+        font-size: 26px;
+        line-height: 38px;
+      }
+    }
+
+    h2.job-title {
+      order: 2;
+      color: #aaa;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 3px;
+
+      // tablet fix
+      @media (min-width: 768px) and (max-width: 1023px) {
+        margin-left: 50px;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        margin: 25px auto 0; // center horizontally
+        display: block;
+        text-align: center;  // align text same as h1
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+
+    .flat-button {
+      order: 3;
+      color: #ffd700;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid #ffd700;
+      margin-top: 30px;
+      width: fit-content;
+      display: inline-block;
+
+      &:hover {
+        background: #ffd700;
+        color: #000;
+      }
+
+      // tablet fix
+      @media (min-width: 768px) and (max-width: 1023px) {
+        margin-left: 50px;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        margin: 25px auto 0; // center horizontally
+        display: block;
+        text-align: center;  // align text same as h1
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+  
+    // For mobile view (stacked under contact)
+    @media (max-width: 768px) {
+      .resume-button {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+      }
+    }
+
+    ul {
+      order: 4;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+
+      // tablet fix
+     @media (min-width: 768px) and (max-width: 1023px) {
+        margin-left: 50px;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        margin: 25px auto 0; // center horizontally
+        text-align: center;  // align text same as h1
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+
+      li {
+        a {
+          padding-top: 20px;
+          display: block;
+          font-size: 30px;
+          line-height: 16px;
+          color: #4d4d4e;
+
+          @media (max-width: 768px) {
+            font-size: 25px;
+            color: #ffd700;
+          }
+          @media (max-width: 480px) {
+            font-size: 20px;
+            color: #ffd700;
+          }
+        }
+
+        &:hover {
+          .anchor-icon {
+            color: #ffd700;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+    }
+  }
+
+  .visual-zone {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .lottie-animation {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .tech-icons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .text-zone,
+    .visual-zone {
+      width: 100%;
+      padding: 30px 20px;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.tools-container {
+  display: grid;
+  gap: 2rem;
+  column-gap: 10rem;
+  padding: 1rem;
+  margin-right: 5rem;
+
+  // Desktop: 5 columns
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+
+  // Tablet: 3 columns
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Mobile: 2 columns
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    justify-content: center;
+    width: 130%;
+    max-width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+      .tool-name {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-name {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-align: center;
+      opacity: 0; // hide text initially
+      transform: translateY(10px); // slightly below
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .tool-name {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  }
+}
+
+// Tool card float animation
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); // adjust float height
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.tool-card {
+  animation: float 3s ease-in-out infinite; // float effect
+  transition: transform 0.3s ease; // smooth hover effect if any
+}
+
+// Add different delays to each card
+.tool-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.tool-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.tool-card:nth-child(3) {
+  animation-delay: 1s;
+}
+.tool-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.tool-card:nth-child(5) {
+  animation-delay: 2s;
+}

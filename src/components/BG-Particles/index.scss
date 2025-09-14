@@ -1,0 +1,9 @@
+/* Force particles to always stay at the back */
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0 !important;   /* Keep below everything */
+  pointer-events: none;    /* So it won’t block clicks */
+}

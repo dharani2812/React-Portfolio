@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ====== About Page Container ====== */
+.container.about-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  min-height: 100vh;
+  padding: 0 5%;
+}
+
+/* ====== Text Zone ====== */
+.text-zone {
+  display: flex; /* make flex container */
+  flex-direction: column;
+  width: 50%;
+  max-width: 600px;
+  margin-top: -20px;
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem !important;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}
+
+/* ====== Replace Cube Spinner with Photo ====== */
+.stage-cube-cont {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .about-photo {
+    border-radius: 10px; // square/rectangle photo
+    box-shadow: 0 10px 40px rgba(233, 233, 233, 0.3);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: inline-block;
+
+    /* background same as image */
+    background: url('../../assets/images/about-pic.png') no-repeat center center;
+    background-size: cover;
+
+    img {
+      width: 100%;   // always scale to container width
+      height: auto;  // keep aspect ratio
+      max-width: 100%; 
+      max-height: 65vh; // desktop safe height
+      object-fit: contain; 
+      display: block;
+    }
+  }
+}
+
+/* ====== Tablet & Mobile Layout ====== */
+@media screen and (max-width: 1020px) {
+  .container.about-page {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .text-zone {
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      order: 1; // heading first
+    }
+
+    .stage-cube-cont {
+      order: 2; // photo immediately after heading
+      width: 100%;
+      max-width: 400px;
+      margin: 10px 0; // spacing between h1 and p
+      align-self: center; // center photo horizontally
+
+      .about-photo {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+          max-height: none;
+        }
+      }
+    }
+
+    p {
+      order: 3; // paragraph after photo
+    }
+  }
+}
+
+/* ====== Responsive Typography ====== */
+@media screen and (max-width: 1024px) {
+  .text-zone p {
+    font-size: 1.5rem !important;
+  }
+  .text-zone h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .text-zone p {
+    font-size: 1.3rem !important;
+  }
+  .text-zone h1 {
+    font-size: 1.8rem;
+  }
+
+  .stage-cube-cont .about-photo {
+    max-width: 320px; // better for mobile
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text-zone p {
+    font-size: 0.95rem;
+  }
+  .text-zone h1 {
+    font-size: 1.5rem;
+  }
+
+  .stage-cube-cont .about-photo {
+    max-width: 260px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .text-zone p {
+    font-size: 0.9rem;
+  }
+  .text-zone h1 {
+    font-size: 1.3rem;
+  }
+
+  .stage-cube-cont .about-photo {
+    max-width: 220px;
+  }
+}
